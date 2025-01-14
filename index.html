@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date with my love</title>
+    <link rel="icon" href="./crc.png" type="image/x-icon">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .container {
+            text-align: center;
+            position: relative;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        #no {
+            background-color: #eb0d0d;
+            position: absolute;
+            color: white;
+        }
+        #yes {
+            background-color: #4CAF50;
+            color: white;
+        }
+        #yes:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Quer sair em um date comigo para comemorar seu aniversário?</h1>
+        <button id="yes" onclick="alert('Ótimo! Dia 04/03 às 19 horas ')">Sim</button>
+        <button id="no" onmouseover="moveButton()" onclick="showMessage()">Não</button>
+    </div>
+
+    <script>
+        function moveButton() {
+            const noButton = document.getElementById('no');
+            const container = document.querySelector('.container');
+            const containerRect = container.getBoundingClientRect();
+            const newTop = Math.random() * (containerRect.height - noButton.offsetHeight);
+            const newLeft = Math.random() * (containerRect.width - noButton.offsetWidth);
+            noButton.style.top = newTop + 'px';
+            noButton.style.left = newLeft + 'px';
+        }
+
+        function showMessage() {
+            alert('Essa opção não existe, vai sim!');
+        }
+    </script>
+</body>
+</html>
